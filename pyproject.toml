@@ -7,6 +7,9 @@ authors = ["Shaan Savarirayan <shaan.savarirayan@gmail.com>"]
 [tool.poetry.dependencies]
 python = "^3.8"
 ccxt = "~1.56"
+google-api-python-client = "~2.22"
+google-auth-httplib2 = "~0.1"
+google-auth-oauthlib = "^0.4.6"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
