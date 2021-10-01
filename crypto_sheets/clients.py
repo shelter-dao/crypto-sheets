@@ -1,6 +1,5 @@
 import ccxt
 
-
 class FTX_US(ccxt.ftx):
     def __init__(self):
         super().__init__()
