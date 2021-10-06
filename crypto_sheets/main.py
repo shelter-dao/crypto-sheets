@@ -6,16 +6,19 @@ from google.oauth2 import service_account
 
 from .clients import FTX_US
 
+
+GCP_SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
+GCP_SERVICE_ACCOUNT_CREDENTIALS = "service-account.json"
+SHEET_ID = "1nH82URxwnH_ay8dFWBJITxV1GiJ8h4yOTqtPgUhfJ1Q"
+SHEET_RANGE = "Sheet1"
+
+
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s,%(msecs)d %(levelname)s: %(message)s',
     datefmt='%H:%M:%S',
 )
 
-GCP_SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
-GCP_SERVICE_ACCOUNT_CREDENTIALS = "credentials.json"
-SHEET_ID = "1nH82URxwnH_ay8dFWBJITxV1GiJ8h4yOTqtPgUhfJ1Q"
-SHEET_RANGE = "Sheet1"
 
 def get_gcp_creds():
     creds = service_account.Credentials.from_service_account_file(
@@ -56,6 +59,7 @@ def main():
         response = request.execute()
 
         print(response)
+
 
 if __name__ == '__main__':
     main()

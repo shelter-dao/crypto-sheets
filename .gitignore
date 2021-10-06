@@ -139,4 +139,4 @@ cython_debug/
 
 # Third Party Packages
 # Google Cloud API credentials
-credentials.json
+service-account.json
