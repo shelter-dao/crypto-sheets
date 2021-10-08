@@ -2,27 +2,29 @@
 
 A tool for tracking crypto currency prices in Google sheets
 
-## Development
+## Required Tooling
+- [Git](https://git-scm.com/downloads)
+- [Docker](https://docs.docker.com/get-docker/)
+- [Pip](https://pip.pypa.io/en/stable/installing/) - make sure you're using Python 3
 
-1. Copy environment variables
+## Development
+### First time
+1. Clone this repo and navigate to the app directory
+```
+$ git clone https://github.com/shelter-labs/crypto-sheets.git
+```
+```
+$ cd crypto-sheets
+```
+2. Create .env
 ```
 $ cp .env.example .env
 ```
-
-2. Set your API keys by using vim or another text editor to modify the `.env` file
+3. Build and run containers
 ```
-vim .env
+$ docker compose up --build
 ```
-
-3. Install [poetry](https://python-poetry.org/)
-
-4. Run scripts using `$ poetry run <command>`. Commands for running scripts are defined in `pyproject.toml`
-
+### Running the app
 ```
-# pyproject.toml
-
-[tool.poetry.scripts]
-
-# Find script command definitions here
-# ...
+$ docker compose up
 ```

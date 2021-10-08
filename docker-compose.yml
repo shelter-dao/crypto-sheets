@@ -1,0 +1,8 @@
+version: "3"
+
+services:
+  crypto_sheets:
+    build: .
+    command: poetry run crypto_sheets
+    env_file: .env
+    tty: true
