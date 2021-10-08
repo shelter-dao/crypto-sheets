@@ -28,3 +28,7 @@ $ docker compose up --build
 ```
 $ docker compose up
 ```
+### Stop the app
+```
+$ docker compose down
+```
