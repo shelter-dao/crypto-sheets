@@ -2,7 +2,7 @@ import logging
 import time
 
 from google.oauth2 import service_account
-from googleapiclient import discovery
+from googleapiclient import discovery, errors
 
 from .clients import FTX_US
 
@@ -56,10 +56,14 @@ def main():
                 valueInputOption=value_input_option,
                 body=body,
             )
-            response = request.execute()
 
-            logging.info("Sheet updated. Sleeping...")
-            time.sleep(2)
+            try:
+                response = request.execute()
+                logging.info("Sheet updated. Sleeping...")
+                time.sleep(1.5)
+            except errors.HttpError as e:
+                logging.error("Bad request. Trying again. Sleeping...")
+                time.sleep(60)
 
 
 if __name__ == "__main__":
